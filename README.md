@@ -18,6 +18,7 @@
 # Student Information
 - Name: 李佳哲(LiJiaZhe)
 - ID: 1121557
+- My personal Webpage:https://softdizzy.github.io/
 
 # Course Description
 - This repository is primarily dedicated to documenting my learning process and assignments for CS203A Data Structures I will continue updating it with lecture notes, code examples, and practice exercises in the future.
