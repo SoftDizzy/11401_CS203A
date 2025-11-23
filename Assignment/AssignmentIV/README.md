@@ -16,11 +16,24 @@ evaluate their efficiency, and understand their applications in computer science
 
 ## My Hash Function
 ### Integer Keys 
-- Formula / pseudocode:
+- Formula / pseudocode (in c++):
   ```text
-  [Your implementation here]
+  int myHashInt(int key, int m) 
+{
+    if (m <= 0) return 0;
+
+    long long safe_key = key;
+    if (safe_key < 0)
+    {
+        safe_key = -safe_key;
+    }
+    return static_cast<int>(safe_key % m);  
+}
   ```
-- Rationale: [Explain your design choices and how they minimize collisions.]
+- Rationale: 
+    - 處理負數:在 C++ ，負數取餘數 (eg: -5 % 3 = -2)會是負數，但Array的Index不能是負的，因此我先將他轉成正數，使用long long來存則是為了防止 key為最小負整數時，轉正會Overflow.
+    - 除留餘數法:能將算出的數字控制在 0 到 m-1 的範圍內，但如果要減少碰撞，就必須注意 m (Table Size) 的選擇， 例如可以用質數來減少碰撞
+
 
 ### Non-integer Keys
 - Formula / pseudocode:
