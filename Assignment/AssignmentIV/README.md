@@ -116,7 +116,7 @@ evaluate their efficiency, and understand their applications in computer science
   .\hash_cpp.exe
   ```
 
-### Result Snapshot
+### Result 
 - Example output for integers:
   ```
   === Hash Function Observation (C Version) ===
@@ -316,7 +316,10 @@ evaluate their efficiency, and understand their applications in computer science
   fox       18
 
   ```
+  ### Result Snapshot
 
+ ![Execution Result Screenshot](screenshot.png)
+ 
 - Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
 - Example output for integers( Key = 21 ~ 30):
   ```
@@ -334,7 +337,7 @@ evaluate their efficiency, and understand their applications in computer science
 
 ## Analysis
 - Prime vs non-prime `m`:
-    - 觀察現象: 當 Table Size 是10的時候，hash function 會使 k%10 ，會直接對數字取個位數，所以當 key 是( 21~30 , 51~60 )他們的 index 是完全一樣的，都會產生碰撞. 但若改為質數時，這個規律就可以打破，當質數越大，分布的就越廣，當 Table Size 是37時，在這個數據的測試下則完全沒有碰撞.
+    - 觀察現象: 當 Table Size 是10的時候，hash function 會使 k%10 ，會直接對數字取個位數，所以當 key 是( 21-30 , 51-60 )他們的 index 是完全一樣的，都會產生碰撞. 但若改為質數時，這個規律就可以打破，當質數越大，分布的就越廣，當 Table Size 是37時，在這個數據的測試下則完全沒有碰撞.
 
 - Patterns or collisions:
     - Table Size 為非質數( m = 10)時，Index 呈現規律的現象( 1, 2, 3,...)，且容易產生碰撞，
@@ -345,6 +348,28 @@ evaluate their efficiency, and understand their applications in computer science
     - 改善字串: 沒有單純的使用ASCII的加總，在相同字母但不同排列組合下會產生碰撞，因此使用多項式的方式，將字元乘上權重，且在迴圈取餘數，防止 Overflow ，區分不同字串.
 
 ## Reflection
-1. Designing hash functions requires balancing simplicity and effectiveness to minimize collisions.
-2. Table size significantly impacts the uniformity of the hash distribution, with prime sizes performing better.
-3. The design using a prime table size and a linear transformation formula produced the most uniform index sequence.
+- Hash Function設計心得:
+  - 雖然除留餘數法能快速的分類好index，但是如果Table Size的大小沒有設好，容易會有碰撞，因此可以選一個較大的質數，這樣不但可以減少碰撞，還能將資料分布的廣.
+  - 字串雜湊，一般的ASCII加總在特地情況下會有相同的Index，但乘上權重後就能解決這個問題.
+- Makeflie應用:
+  - 在這次實作以前我從來沒有見過這個工具，因為Windows系統沒有make這個工具，但是我們可以建立Makefile.bat檔來模擬Linux的自動化流程，且Makefi還可以選擇要編譯哪種語言，以及執行，在建檔之前我則是使用手動編譯的方式，可輸入以下指令:
+  ```
+  gcc -std=c11 C/main.c C/hash_fn.c -o hash_c.exe
+  g++ -std=c++17 CXX/main.cpp CXX/hash_fn.cpp -o hash_cpp.exe
+
+  ```
+- Github應用:
+  - 藉由了這次的作業，我理解到了Github對於資工的重要性了，無論是個人的作品、學校的作業、教材，又或是將來工作所需，所有的資源都能存在Github裡，而且還能透過自己的想法進行整理，可以將資源整理得很有結構化，像是這次AssignmentIV中，我們需要寫兩種語言，除此之外還有README、VSCode檔，需存放各式檔案，而利用Github就能很好的做到這點，而且還能利用Commit記錄著每次的更正歷程，也能隨時地同步到資料庫中、交接給下一位開發者等，因此我認為Github對於資工人來說還是一個相當重要、值得學習的工具!
+
+## References
+
+1. **String Hashing**
+- https://cp-algorithms.com/string/string-hashing.html
+
+2. **Choice of Table Size**
+- https://stackoverflow.com/questions/1145217/why-should-hash-functions-use-a-prime-number-modulus
+
+3. **Github**
+- https://github.com/doggy8088/Learn-Git-in-30-days/blob/master/zh-tw/README.md
+
+4. **Gemini**
