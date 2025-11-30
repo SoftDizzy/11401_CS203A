@@ -361,6 +361,9 @@ evaluate their efficiency, and understand their applications in computer science
 - Github應用:
   - 藉由了這次的作業，我理解到了Github對於資工的重要性了，無論是個人的作品、學校的作業、教材，又或是將來工作所需，所有的資源都能存在Github裡，而且還能透過自己的想法進行整理，可以將資源整理得很有結構化，像是這次AssignmentIV中，我們需要寫兩種語言，除此之外還有README、VSCode檔，需存放各式檔案，而利用Github就能很好的做到這點，而且還能利用Commit記錄著每次的更正歷程，也能隨時地同步到資料庫中、交接給下一位開發者等，因此我認為Github對於資工人來說還是一個相當重要、值得學習的工具!
 
+- VScode應用:
+  - 在這次的作業之前我認為我只使用到VScode功能裡的冰山一角而已，但經過了這次的作業，我使用到了更多的工具，我學到了怎麼有結構化的管理我的專案、存放資料、使用Makeflie、結合Github應用、還有vscode本身指令的更多應用，這些都是能夠好好應用在未來的經驗!
+
 ## References
 
 1. **String Hashing**
